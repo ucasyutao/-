@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>魔方与选项框</title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.lifang{
+				width: 400px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotate3d(1,1,1,0deg);
+				transition: all 1s;
+			}
+			.page{
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.99;
+			}
+			.top{
+				background-image: url(img/14875632047249318801.JPG);
+				background-size: auto 100%;
+				transform: rotateX(90deg) translateZ(200px);
+			}
+			.front{
+				background-image: url(img/2573227675054894496.JPG);
+				background-size: auto 100%;
+				transform: translateZ(200px);
+			}
+			.right{
+				background-image: url(img/9788574088275682139.JPG);
+				background-size: auto 100%;
+				transform: rotateY(90deg) translateZ(200px);
+			}
+			.bottom{
+				background-image: url(img/14875632047249318801.JPG);
+				background-size: auto 100%;
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+			.back{
+				background-image: url(img/2573227675054894496.JPG);
+				background-size: auto 100%;
+				transform: translateZ(-200px);
+			}
+			.left{
+				background-image: url(img/9788574088275682139.JPG);
+				background-size: auto 100%;
+				transform: rotateY(-90deg) translateZ(200px);
+			}
+			.btn{
+				display: inline-block;
+				font-size: 30px;
+				width: 30%;
+				height: 100px;
+				border: 2px solid black;
+				border-radius: 10px;
+				margin: 1%;
+				text-align: center;
+				line-height: 100px;
+				box-shadow: 0 0 0 #000000;
+				transition: all 1s;
+			}
+			.btn:hover{
+				box-shadow: 0 0 20px #000000;
+			}
+			.buto{
+				height: 100px;
+				margin: 100 auto;
+			}
+			#dw:checked~.lifang{
+				transform: rotate3d(0,0,0,0deg);
+			}
+			#kk:checked~.lifang{
+				transform: rotate3d(1,0,0,90deg);
+			}
+			#sg:checked~.lifang{
+				transform: rotate3d(0,1,0,90deg);
+			}
+				
+		</style>
+	</head>
+	<body>
+		<div class="buto">
+			<label class="btn" for="dw">达瓦更扎</label>
+			<label class="btn" for="kk">可可西里</label>
+			<label class="btn" for="sg">四姑娘山</label>
+		</div>
+		<input type="radio" name="where" id="dw" value="达瓦更扎" hidden="hidden" />
+		<input type="radio" name="where" id="kk" value="可可西里" hidden="hidden" />
+		<input type="radio" name="where" id="sg" value="四姑娘山" hidden="hidden" />
+		<div class="lifang">
+			<div class="page top"></div>
+			<div class="page bottom"></div>
+			<div class="page right"></div>
+			<div class="page left"></div>
+			<div class="page front"></div>
+			<div class="page back"></div>
+		</div>
+	</body>
+</html>
